@@ -10,7 +10,10 @@ public:
             min_left[i] = min(min_left[i-1],nums[i]);
         }
         
-        stack<int> stk;
+        stack<int> stk; // stack is used for storing the middle 3 value of 132
+        
+        // min left for 1 value and nums[n-i+1] for 2 value;
+        
         for(int i = n-1; i>=0; i--){
             
             // check if nums[i] > min_left[i]
