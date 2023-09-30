@@ -16,22 +16,27 @@ public:
         if (!root) return root;
         
         
-        queue<TreeNode*> que;
-        que.push(root);
+//         queue<TreeNode*> que;
+//         que.push(root);
         
-        while( !que.empty()){
+//         while( !que.empty()){
             
-            TreeNode *curr = que.front();
-            que.pop();
-            swap(curr->left,curr->right);
-            if(curr->left){
-                que.push(curr->left);
-            }
-            if(curr->right){
-                que.push(curr->right);
-            }
+//             TreeNode *curr = que.front();
+//             que.pop();
+//             swap(curr->left,curr->right);
+//             if(curr->left){
+//                 que.push(curr->left);
+//             }
+//             if(curr->right){
+//                 que.push(curr->right);
+//             }
             
-        }
+//         }
+        
+        TreeNode *left = invertTree(root->left);
+        TreeNode *right = invertTree(root->right);
+        
+        swap(root->left,root->right);
         
         return root;
         
