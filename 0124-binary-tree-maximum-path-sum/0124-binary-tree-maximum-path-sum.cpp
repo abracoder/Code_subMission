@@ -18,7 +18,9 @@ class Solution {
         int left = solve(root->left,ans);
         int right = solve(root->right,ans);
         
-        int temp = root->val + max(0,max(left,right));
+        // int temp = root->val + max(0,max(left,right)); // this is also right;
+        
+        int temp = max( max ( left,right)+ root->val, root->val);
         int curr = max(left+right+root->val, temp);
         
          ans = max (ans,curr);
