@@ -9,11 +9,7 @@ public:
         
         for(auto it: nums){
             
-            if(mpp.find(it)!=mpp.end()){
-                count += mpp[it];
-                mpp[it]++;
-            }
-            else
+           count += mpp[it];
             mpp[it]++;
         }
         
