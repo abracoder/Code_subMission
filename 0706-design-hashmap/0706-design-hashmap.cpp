@@ -1,9 +1,9 @@
 class MyHashMap {
     
-    int hashMap[10000005];
+    int hashMap[1000005];
 public:
     MyHashMap() {
-        for(int i = 0;i< 10000005; ++i){
+        for(int i = 0;i< 1000005; ++i){
             hashMap[i] = INT_MIN +1;
         }
     }
