@@ -4,7 +4,7 @@ class MyHashMap {
 public:
     MyHashMap() {
         for(int i = 0;i< 1000005; ++i){
-            hashMap[i] = INT_MIN +1;
+            hashMap[i] = -1;
         }
     }
     
@@ -13,14 +13,12 @@ public:
     }
     
     int get(int key) {
-        
-        if(hashMap[key] == INT_MIN +1) return -1;
         return hashMap[key];
         
     }
     
     void remove(int key) {
-        hashMap[key] = INT_MIN+1;
+        hashMap[key] = -1;
     }
 };
 
