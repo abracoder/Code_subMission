@@ -20,11 +20,7 @@ public:
         
         while(fast && fast->next){
             
-            
-            if(fast->next->next){
-                fast = fast->next->next;
-            }
-            else fast = fast->next;
+            fast = fast->next->next;
             slow = slow->next;
             
         }
