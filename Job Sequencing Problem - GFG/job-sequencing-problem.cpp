@@ -50,12 +50,16 @@ class Solution
             
             if( arr[i].profit > temp[arr[i].dead]){
                 temp[arr[i].dead] = arr[i].profit;
+                count++;
+                profit += arr[i].profit;
             }
             else {
                 int currentProfit = arr[i].profit;
                for( int j = arr[i].dead-1; j > 0 ; j--){
                    if( currentProfit > temp[j] ){
                        temp[j] = currentProfit;
+                       count++;
+                       profit += currentProfit;
                        break;
                       
                    }
@@ -64,12 +68,12 @@ class Solution
             }
             }
             
-            for (int i = 1; i < temp.size();i++){
-                if(temp[i] != 0){
-                    count ++;
-                    profit += temp[i];
-                }
-            }
+            // for (int i = 1; i < temp.size();i++){
+            //     if(temp[i] != 0){
+            //         count ++;
+            //         profit += temp[i];
+            //     }
+            // }
         
         
         
