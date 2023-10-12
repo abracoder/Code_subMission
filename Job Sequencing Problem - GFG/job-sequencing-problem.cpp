@@ -45,38 +45,38 @@ class Solution
         }
         int count = 0;
         int profit = 0;
-        vector<int>temp(maxi+1,0);
+        vector<int>temp(maxi+1,-1);
+        
         for( int i = 0 ; i < n ; i++){
-            
-            if( arr[i].profit > temp[arr[i].dead]){
-                temp[arr[i].dead] = arr[i].profit;
-                count++;
-                profit += arr[i].profit;
-            }
-            else {
-                int currentProfit = arr[i].profit;
-               for( int j = arr[i].dead-1; j > 0 ; j--){
-                   if( currentProfit > temp[j] ){
-                       temp[j] = currentProfit;
-                       count++;
-                       profit += currentProfit;
-                       break;
-                      
-                   }
-               }
-                    
-            }
+            for(int j = arr[i].dead ; j > 0; j--){
+                if( temp[j] == -1){
+                    temp[j] = i;
+                    count ++;
+                    profit += arr[i].profit;
+                    break;
+                }
             }
             
-            // for (int i = 1; i < temp.size();i++){
-            //     if(temp[i] != 0){
-            //         count ++;
-            //         profit += temp[i];
-            //     }
+            // if( arr[i].profit > temp[arr[i].dead]){
+            //     temp[arr[i].dead] = arr[i].profit;
+            //     count++;
+            //     profit += arr[i].profit;
             // }
-        
-        
-        
+            // else {
+            //     int currentProfit = arr[i].profit;
+            //   for( int j = arr[i].dead-1; j > 0 ; j--){
+            //       if( currentProfit > temp[j] ){
+            //           temp[j] = currentProfit;
+            //           count++;
+            //           profit += currentProfit;
+            //           break;
+                      
+            //       }
+            //   }
+                    
+            // }
+            }
+            
         return {count, profit};
         
     } 
