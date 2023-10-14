@@ -9,23 +9,23 @@
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
-<pre><strong>Input:</strong> s = "the sky is blue"
+<pre style="position: relative;"><strong>Input:</strong> s = "the sky is blue"
 <strong>Output:</strong> "blue is sky the"
-</pre>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 
 <p><strong class="example">Example 2:</strong></p>
 
-<pre><strong>Input:</strong> s = "  hello world  "
+<pre style="position: relative;"><strong>Input:</strong> s = "  hello world  "
 <strong>Output:</strong> "world hello"
 <strong>Explanation:</strong> Your reversed string should not contain leading or trailing spaces.
-</pre>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 
 <p><strong class="example">Example 3:</strong></p>
 
-<pre><strong>Input:</strong> s = "a good   example"
+<pre style="position: relative;"><strong>Input:</strong> s = "a good   example"
 <strong>Output:</strong> "example good a"
 <strong>Explanation:</strong> You need to reduce multiple spaces between two words to a single space in the reversed string.
-</pre>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
