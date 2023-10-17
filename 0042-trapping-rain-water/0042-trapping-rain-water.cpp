@@ -47,34 +47,67 @@ class Solution {
         
     }
 public:
-    int trap(vector<int>& height) {
+//     int trap(vector<int>& height) {
         
-        vector<int> left = height;
-        vector<int> right = height;
-        int n =height.size();
-        int x = 0;
-        for(int i = 0 ; i< n; i++){
-            x = max(left[i], x);
-            left[i] = x;
-        }
-        x = 0;
-        for(int i = n-1 ; i>=0; i--){
-            x = max(right[i], x);
-            right[i] = x;
-        }
-        // print(left);
-        // print(right);
+//         vector<int> left = height;
+//         vector<int> right = height;
+//         int n =height.size();
+//         int x = 0;
+//         for(int i = 0 ; i< n; i++){
+//             x = max(left[i], x);
+//             left[i] = x;
+//         }
+//         x = 0;
+//         for(int i = n-1 ; i>=0; i--){
+//             x = max(right[i], x);
+//             right[i] = x;
+//         }
+//         // print(left);
+//         // print(right);
         
-        int trappedWater = 0;
+//         int trappedWater = 0;
         
-        for(int i = 0; i < n; i++ ){
+//         for(int i = 0; i < n; i++ ){
             
-            trappedWater += ((min(left[i],right[i]) - height[i]));
+//             trappedWater += ((min(left[i],right[i]) - height[i]));
+//         }
+        
+//         return trappedWater;
+        
+        
+        
+//     }
+    
+    int trap(vector<int>& height) {
+    
+        int leftMax = INT_MIN;
+        int rightMax = INT_MIN;
+        int ans =0;
+        int left = 0; 
+        int right = height.size()-1;
+        
+        while( left <= right){
+            
+            
+            if( height[left] <= height[right]){
+                if(leftMax < height[left]){
+                    leftMax = height[left];
+                }else {
+                   ans += leftMax - height[left]; 
+                }
+                left ++;
+            }else{
+                if(rightMax < height[right]){
+                    rightMax = height[right];
+                    
+                }else{
+                    ans += rightMax - height[right];
+                }
+                right --;
+            }
         }
         
-        return trappedWater;
-        
-        
-        
+    return ans;    
     }
+    
 };
