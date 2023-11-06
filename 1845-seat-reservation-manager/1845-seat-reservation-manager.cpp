@@ -1,26 +1,28 @@
 class SeatManager {
-    vector<int> arr;
-    set<int> lowrank;
-    int lowest;
+    // set<int> lowrank;
+    // int lowest;
+    priority_queue<int,vector<int>, greater<int>> pq;
+    int max_smallest =0;
     public:
+    
     SeatManager(int n) {
-        for(int i = 0 ;i<n;i++){
-            lowrank.insert(i);
-        }
+        // for(int i = 0 ;i<n;i++){
+        //     lowrank.insert(i);
+        // }
+        // pq.push(1);
     }
     
     int reserve() {
-       lowest = *begin(lowrank);
-        // arr[lowest] =1;
-        lowrank.erase(begin(lowrank));
-        return lowest+1;
+        if(pq.empty()) pq.push(++max_smallest);
+       int low = pq.top();
+        pq.pop();
         
+        return low;
     }
     
     void unreserve(int seatNumber) {
         // arr[seatNumber-1] =0;
-        lowrank.insert(seatNumber-1);
-        
+        pq.push(seatNumber);        
         
     }
 };
