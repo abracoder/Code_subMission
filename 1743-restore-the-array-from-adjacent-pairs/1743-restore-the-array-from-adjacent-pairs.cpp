@@ -30,10 +30,23 @@ public:
                 break;
             }
         }
-        
+        int curr = root;
         vector<int> ans;
+        ans.push_back(curr);
+        int prev = INT_MAX;
         
-        dfs(root, INT_MAX,ans,mp);
+        while(ans.size() < mp.size()){
+            for(int neighbour : mp[curr]){
+                if(neighbour != prev){
+                    ans.push_back(neighbour);
+                    prev = curr;
+                    curr = neighbour;
+                    break;
+                }
+            }
+        }
+        
+        // dfs(root, INT_MAX,ans,mp);
         return ans;
     }
 };
