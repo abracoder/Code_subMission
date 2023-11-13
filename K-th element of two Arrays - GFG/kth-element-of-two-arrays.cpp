@@ -9,29 +9,43 @@ class Solution{
     int kthElement(int arr1[], int arr2[], int n, int m, int k)
     {
         
-        vector<int> temp;
+        // vector<int> temp;
+        int count = 0;
         int left = 0 ;
         int right = 0;
+        int val =0;
         
         while(left < n && right < m){
+            if (count == k) break;
             if(arr1[left] < arr2[right]){
-                temp.push_back(arr1[left]);
-                left++;
+                // temp.push_back(arr1[left]);
+                // left++;
+                count ++;
+                val = arr1[left++];
             }
             else {
-                temp.push_back(arr2[right++]);
+                // temp.push_back(arr2[right++]);
+                val = arr2[right++];
+                count++;
             }
         }
-        while(left < n){
-            temp.push_back(arr1[left++]);
+        
+        if (count == k) return val;
+        
+        while(left < n && count != k){
+            // temp.push_back(arr1[left++]);
+            val = arr1[left++];
+            count++;
         }
         
-        while(right < m){
-            temp.push_back(arr2[right++]);
+        while(right < m && count != k){
+            // temp.push_back(arr2[right++]);/
+            val = arr2[right++];
+            count++;
         }
         
         
-        return temp[k-1];
+        return val;
         
     }
 };
