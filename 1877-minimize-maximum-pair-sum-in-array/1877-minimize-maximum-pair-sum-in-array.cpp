@@ -7,9 +7,10 @@ public:
         int n = nums.size();
         
         int sum  = INT_MIN;
-        for(int i = 0 ; i< n; i++){
+        int left = 0 ,right = n-1;
+        while(left < right){
             
-            sum = max(nums[i]+nums[n-i-1],sum);
+            sum = max(nums[left++]+nums[right--],sum);
             
         }
         
